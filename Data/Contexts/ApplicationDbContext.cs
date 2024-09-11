@@ -14,9 +14,11 @@ public class ApplicationDbContext : DbContext
     {
         new BookEntityTypeConfiguration().Configure(modelBuilder.Entity<Book>());
         new GenreEntityTypeConfiguration().Configure(modelBuilder.Entity<Genre>());
+        new AuthorEntityTypeConfiguration().Configure(modelBuilder.Entity<Author>());
     }
 
     public DbSet<Book> Books { get; set; }
     public DbSet<Genre> Genres { get; set; }
+    public DbSet<Author> Authors { get; set; }
 
 }
