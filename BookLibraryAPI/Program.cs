@@ -1,6 +1,12 @@
+using BusinessLogic.ServicesConfigurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+string defaultConnectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+
+builder.Services.ApplicationDbContextConfigurator(defaultConnectionString);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
