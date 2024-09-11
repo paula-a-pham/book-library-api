@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Data.Contexts;
 
@@ -12,4 +13,6 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
     }
+
+    public DbSet<Book> Books { get; set; }
 }
