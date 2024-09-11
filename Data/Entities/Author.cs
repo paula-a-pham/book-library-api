@@ -8,4 +8,5 @@ public class Author
     public string? Nationality { get; set; }
     public string? Image { get; set; }
     public DateTime? BirthDate { get; set; }
+    public ICollection<Book>? Books { get; set; }
 }

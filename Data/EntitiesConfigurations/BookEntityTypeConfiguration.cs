@@ -18,5 +18,9 @@ internal class BookEntityTypeConfiguration : IEntityTypeConfiguration<Book>
             .HasOne(b => b.Genre)
             .WithMany(g => g.Books)
             .HasForeignKey(b => b.GenreId);
+        builder
+            .HasOne(b => b.Author)
+            .WithMany(a => a.Books)
+            .HasForeignKey(b => b.AuthorId);
     }
 }
