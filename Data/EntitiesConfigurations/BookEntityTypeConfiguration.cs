@@ -13,6 +13,9 @@ internal class BookEntityTypeConfiguration : IEntityTypeConfiguration<Book>
         builder.Property(b => b.Summary).HasMaxLength(2000);
         builder.Property(b => b.Language).HasMaxLength(20);
 
+        // Indexing
+        builder.HasIndex(b => b.Title).IsUnique(false);
+
         // Define ForeignKeys
         builder
             .HasOne(b => b.Genre)
