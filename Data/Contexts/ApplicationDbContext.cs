@@ -13,7 +13,10 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         new BookEntityTypeConfiguration().Configure(modelBuilder.Entity<Book>());
+        new GenreEntityTypeConfiguration().Configure(modelBuilder.Entity<Genre>());
     }
 
     public DbSet<Book> Books { get; set; }
+    public DbSet<Genre> Genres { get; set; }
+
 }
