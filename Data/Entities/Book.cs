@@ -10,4 +10,6 @@ public class Book
     public DateTime? PublicationDate { get; set; }
     public int? Pages { get; set; }
     public bool? Availability { get; set; }
+    public int? GenreId { get; set; }
+    public Genre? Genre { get; set; }
 }
