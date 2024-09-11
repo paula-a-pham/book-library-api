@@ -1,4 +1,5 @@
 ﻿using Data.Entities;
+using Data.EntitiesConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Contexts;
@@ -11,7 +12,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+        new BookEntityTypeConfiguration().Configure(modelBuilder.Entity<Book>());
     }
 
     public DbSet<Book> Books { get; set; }
